@@ -70,19 +70,30 @@ public class MyLinkedList {
     }
     public void deleteByNode(int value){
         Node p = head;
-        Node q = null;
+        Node pre = null;
         while (p!=null&& p.data!=value){
             p = p.next;
-            q = p;
+            pre = p;
         }
         if(p == null){
             return;
         }
-        if(q==null){
+        if(pre==null){
             head = head.next;
         }else {
-            p.next = p.next.next;
+            pre.next = pre.next.next;
         }
+    }
+    public void deleteByNode(Node p){
+        if(p == head){
+            head = head.next;
+            return;
+        }
+        Node q = head;
+        while (q!=null && q.next!=p){
+            q = q.next;
+        }
+        q.next = q.next.next;
     }
     class Node{
         int data;
