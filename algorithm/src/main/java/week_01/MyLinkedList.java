@@ -54,6 +54,7 @@ public class MyLinkedList {
 
     /**
      * 某个节点之前插入
+     * 就是先找到p的前驱节点
      * @param p
      * @param newNode
      */
@@ -62,6 +63,7 @@ public class MyLinkedList {
             return;
         }
         Node q = head;
+        //next 就是参数p q就是p的前驱节点
         while (q!=null && q.next.data!=p.data){
             q = q.next;
         }
