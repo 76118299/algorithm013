@@ -49,7 +49,7 @@ public class MyLinkedList {
             q = q.next;
         }
         newNode.next = q.next;
-        p.next = newNode;
+        q.next = newNode;
     }
 
     /**
@@ -62,7 +62,7 @@ public class MyLinkedList {
             return;
         }
         Node q = head;
-        while (q!=null && q.next!=p){
+        while (q!=null && q.next.data!=p.data){
             q = q.next;
         }
         newNode.next = q.next;
