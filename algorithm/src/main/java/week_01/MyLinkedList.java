@@ -5,17 +5,24 @@ public class MyLinkedList {
 
     /**
      * 向头部插入节点
+     *
      * @param newNode
      */
     public void  insertToHead(Node newNode){
         if(head == null){
             head = newNode;
         }else {
+            //新节点替换头节点
             newNode.next = head;
             head = newNode;
 
         }
     }
+
+    /**
+     * 向尾部插入节点
+     * @param data
+     */
     public void  insetTail(int data){
         Node newNode = new Node(data);
         if(head == null){
@@ -37,9 +44,19 @@ public class MyLinkedList {
         if(p == null){
             return;
         }
-        newNode.next = p.next;
+        Node q = head;
+        while (q!=null && q.data!=p.data){
+            q = q.next;
+        }
+        newNode.next = q.next;
         p.next = newNode;
     }
+
+    /**
+     * 某个节点之前插入
+     * @param p
+     * @param newNode
+     */
     public void inserBefor(Node p,Node newNode){
         if(p == null){
             return;
@@ -48,7 +65,7 @@ public class MyLinkedList {
         while (q!=null && q.next!=p){
             q = q.next;
         }
-        newNode.next = p;
+        newNode.next = q.next;
         q.next=newNode;
     }
     public void deleteByNode(int value){
