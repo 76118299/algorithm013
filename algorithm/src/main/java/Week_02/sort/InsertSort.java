@@ -14,6 +14,11 @@ public class InsertSort {
         }
     }
 
+    /**
+     * 不使用比较和交换
+     * @param a
+     * @param n
+     */
      public void insertionSort(int[] a,int n){
         if(n<=1){
             return;

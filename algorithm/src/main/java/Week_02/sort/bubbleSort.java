@@ -8,12 +8,14 @@ public class bubbleSort {
         int[] arr = new int[]{9, 6, 3, 1, 5};
 
         for(int i=arr.length;i>0;i--){ //外层循环 i--是因为后面的不需再排序了
-            for(int j=0;j<i-1;j++){
+
+            for(int j=0;j<i-1;j++){ //每次冒泡都要找出最大的元素
                 if(arr[j]>arr[j+1]){
                     int tmp = arr[j];
                     arr[j] = arr[j+1];
                     arr[j+1] = tmp;
                 }
+
             }
         }
 
