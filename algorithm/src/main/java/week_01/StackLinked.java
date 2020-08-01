@@ -14,7 +14,7 @@ public class StackLinked {
         if(top == null){
             top = newNode;
         }else {
-            //新的节点变成head
+            //新的节点变成head 不断的替换head
             newNode.next = top;
             top = newNode;
         }

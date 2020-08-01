@@ -16,10 +16,13 @@ public class DynamicArrayQueue {
     public boolean enqueue(int value){
         if(tail == n){
            if(head ==0){
-               //数据搬移(缩容)
-               for(int i=head;i<tail;i++){
-                   items[i-1] = items[i];
-               }
+              for(int i = head;i<tail;i++){
+                  items[i-1] = items[i];
+              }
+              //扩容
+//              for(int j = tail;j<=head;j--){
+//                  items[j+1] = items[j];
+//              }
                head = 0;
                tail -=head;
            }
