@@ -20,6 +20,44 @@ public class MergeSort {
                 k++;
             }
         }
+    }
+    public void mergeSortRecursion(int[] a,int p,int r){
+        if(p>=r){
+            return;
+        }
+        int q = p +(r-p)/2;
+        mergeSortRecursion(a,p,q);
+        mergeSortRecursion(a,q+1,r);
+        merge(a,p,q,r);
 
     }
+
+    private void merge(int[] a, int p, int q, int r) {
+        int i=p;
+        int j = q+1;
+        int k=0;
+        int[] tmp = new int[r-p+1];
+        while (i<=q&&j<=r){
+            if(a[i]<=a[i++]){
+                tmp[k++] = a[i++];
+            }else {
+                tmp[k++] = a[j++];
+            }
+        }
+        // 判断哪个子数组中有剩余的数据。
+        int start = i;
+        int end = q;
+        if (j <= r) {
+            start = j;
+            end = r;
+        }
+        // 将剩余的数据copy到临时数组 tmp。
+        while (start <= end) {
+            tmp[k++] = a[start++];
+        }
+
+        //将 tmp 中的数据拷贝回 a 中
+        System.arraycopy(tmp, 0, a, p, r - p + 1);
+    }
+
 }
