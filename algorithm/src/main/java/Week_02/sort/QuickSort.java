@@ -1,7 +1,9 @@
 package Week_02.sort;
 
 
-
+/**
+ * 快速排序是找到一个轴，和轴进行比较，进行交换
+ */
 public class QuickSort {
     public static void main(String[] args) {
         int[] arr = new int[]{9, 6, 3, 1, 5};
@@ -29,12 +31,12 @@ public class QuickSort {
             //找到右边比轴小的元素
             while (arr[rightBound]>=pivot) rightBound++;
             //进行元素交换
-            int tmp=arr[leftBound];
-            arr[leftBound] = arr[rightBound];
-            arr[rightBound] = tmp;
+            int tmp=arr[right];
+            arr[right] = arr[leftBound];
+            arr[leftBound] = tmp;
         }
-        int tmp=arr[leftBound];
-        arr[leftBound] = arr[rightBound];
-        arr[rightBound] = tmp;
+        int tmp=arr[right];
+        arr[right] = arr[leftBound];
+        arr[leftBound] = tmp;
     }
 }

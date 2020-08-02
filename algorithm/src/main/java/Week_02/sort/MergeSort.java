@@ -1,5 +1,8 @@
 package Week_02.sort;
 
+/**
+ * 归并排序是将两个数组进行合并到第三个数组中
+ */
 public class MergeSort {
     public static void main(String[] args) {
         int[] arr =new int[]{1,4,7,8,3,6,9};
