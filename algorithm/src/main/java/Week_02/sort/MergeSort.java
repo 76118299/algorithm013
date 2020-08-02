@@ -25,7 +25,7 @@ public class MergeSort {
         if(p>=r){
             return;
         }
-        int q = p +(r-p)/2;
+        int q = p + (r - p) / 2;
         mergeSortRecursion(a,p,q);
         mergeSortRecursion(a,q+1,r);
         merge(a,p,q,r);
