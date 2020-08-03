@@ -29,12 +29,26 @@ public class InsertSort {
             for(;j>=0;j--){
                 //查找插入的位置
                 if(a[j]>value){
-                    a[j+1] = a[j];
+                    a[j+1] = a[j];//这里需要数据搬移
                 }else {
                     break;
                 }
             }
             a[j+1] = value;//插入数据
+        }
+
+        for(int i=1;i<n;i++){
+            int value = a[i];
+            int j = i-1;
+            for(;j>=0;j--){
+                if(a[j]>value){
+                    a[j+1] = a[j];
+                }else {
+                    break;
+                }
+            }
+            a[j+1] = value;
+
         }
      }
 }
