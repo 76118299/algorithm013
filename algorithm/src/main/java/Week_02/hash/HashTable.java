@@ -1,5 +1,13 @@
 package Week_02.hash;
 
+/**
+ * 如何设计hash表
+ * 1.设计好的hash函数
+ * 2.定义好装载因子的阈值，动态扩容机制.
+ * 3.选择合适的散列冲突解决方案(链表法,开发寻址法)
+ * @param <K>
+ * @param <V>
+ */
 public class HashTable<K,V> {
     /**
      * 散列表默认长度
